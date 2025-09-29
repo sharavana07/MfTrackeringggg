@@ -5,11 +5,13 @@ import {
   TrendingUp, 
   TrendingDown, 
   BarChart3, 
-    Activity, 
+  Activity, 
   Clock,
   Building2,
   Minus
 } from "lucide-react";
+
+const API_URL = "https://mftrackeringggg-1.onrender.com";
 
 export default function StocksPage() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -17,10 +19,14 @@ export default function StocksPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/stocks")
+    fetch(`${API_URL}/stocks`)
       .then((res) => res.json())
       .then((data) => {
         setStocks(data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching stocks:", err);
         setLoading(false);
       });
   }, []);

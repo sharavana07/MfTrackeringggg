@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
+
 import { useEffect, useState } from "react";
 import { TrendingUp, TrendingDown, BarChart3, Loader2, AlertCircle, Activity, Zap } from "lucide-react";
+
+const API_URL = "https://mftrackeringggg-1.onrender.com";
 
 type Stock = {
   name: string;
@@ -27,23 +31,24 @@ export default function SummaryPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchSummary = async () => {
-      try {
-        const res = await fetch("http://127.0.0.1:8000/summary");
-        if (!res.ok) {
-          const text = await res.text();
-          throw new Error(`Failed to fetch summary: ${text}`);
-        }
-        const data: Summary = await res.json();
-        setSummary(data);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+  const fetchSummary = async () => {
+    try {
+      const res = await fetch(`${API_URL}/summary`); // ✅ use deployed backend
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Failed to fetch summary: ${text}`);
       }
-    };
-    fetchSummary();
-  }, []);
+      const data: Summary = await res.json();
+      setSummary(data);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchSummary();
+}, []);
+
 
   if (loading) 
     return (
