@@ -5,8 +5,7 @@ import {
   TrendingUp, 
   TrendingDown, 
   BarChart3, 
-  DollarSign, 
-  Activity, 
+    Activity, 
   Clock,
   Building2,
   Minus
@@ -166,7 +165,7 @@ export default function StocksPage() {
                   <div className="flex justify-between items-center">
                     <span className="text-white/50 text-sm font-light">Current Price</span>
                     <div className="flex items-center space-x-2">
-                      <DollarSign className="w-4 h-4 text-white/40" />
+                     
                       <span className="text-white text-lg font-semibold">₹{stock.current}</span>
                     </div>
                   </div>
