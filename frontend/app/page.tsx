@@ -45,7 +45,7 @@ const MotilalFundLanding: React.FC = () => {
   ];
 
   const fundStats = [
-    { label: "AUM", value: "₹2,847 Cr", icon: <Briefcase className="w-5 h-5" />, trend: "up" },
+    { label: "AUM", value: "₹12628.21 Cr", icon: <Briefcase className="w-5 h-5" />, trend: "up" },
     { label: "NAV", value: "₹37.07", icon: <BarChart3 className="w-5 h-5" />, trend: "up" },
     { label: "3Y Return", value: "29.8%", icon: <TrendingUp className="w-5 h-5" />, trend: "up" },
     { label: "Expense Ratio", value: "0.67%", icon: <PieChart className="w-5 h-5" />, trend: "stable" },
