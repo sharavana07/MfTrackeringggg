@@ -4,6 +4,23 @@
 import React, { useState, useEffect } from "react";
 import { TrendingUp, TrendingDown, Eye, EyeOff, Briefcase, Target, Shield, ChevronUp, ChevronDown, BarChart3, PieChart, Activity } from "lucide-react";
 
+
+
+
+
+interface Manager {
+  name: string;
+  startDate: string;
+  endDate: string;
+}
+
+const managers: Manager[] = [
+  { name: "Ajay Khandelwal", startDate: "Dec 2023", endDate: "Present" },
+  { name: "Rakesh Shetty", startDate: "Nov 2022", endDate: "Present" },
+  { name: "Atul Mehra", startDate: "Oct 2024", endDate: "Present" },
+  { name: "Sunil Sawant", startDate: "Jul 2024", endDate: "Present" },
+];
+
 const MotilalFundLanding: React.FC = () => {
   const [showHoldings, setShowHoldings] = useState(true);
   const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
@@ -204,6 +221,25 @@ const MotilalFundLanding: React.FC = () => {
             </div>
           )}
         </div>
+        <div className="min-h-screen bg-black text-white p-6">
+      <h1 className="text-2xl font-semibold mb-6">Fund management</h1>
+      <div className="space-y-6">
+        {managers.map((manager, index) => (
+          <div key={index} className="flex justify-between items-center border-b border-gray-800 pb-4">
+            <div>
+              <h2 className="text-lg font-medium">{manager.name}</h2>
+              <p className="text-sm text-gray-400">
+                {manager.startDate} - <span className="text-white">{manager.endDate}</span>
+              </p>
+            </div>
+            <button className="text-gray-300 text-sm flex items-center hover:text-white">
+              View details
+              <span className="ml-1">▾</span>
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
       </section>
 
       {/* Disclaimer */}
