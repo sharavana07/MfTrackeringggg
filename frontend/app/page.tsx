@@ -221,63 +221,73 @@ const MotilalFundLanding: React.FC = () => {
             </div>
           )}
         </div>
-        <div className="min-h-screen bg-black text-white p-6">
-      <h1 className="text-2xl font-semibold mb-6">Fund management</h1>
-      <div className="space-y-6">
-        {managers.map((manager, index) => (
-          <div key={index} className="flex justify-between items-center border-b border-gray-800 pb-4">
-            <div>
-              <h2 className="text-lg font-medium">{manager.name}</h2>
-              <p className="text-sm text-gray-400">
-                {manager.startDate} - <span className="text-white">{manager.endDate}</span>
-              </p>
-            </div>
-            <button className="text-gray-300 text-sm flex items-center hover:text-white">
-              View details
-              <span className="ml-1">▾</span>
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-        <div className="min-h-screen bg-black text-white p-6">
-      <h1 className="text-2xl font-semibold mb-6">
-        Expense ratio, exit load and tax
-      </h1>
-
-      {/* Expense Ratio */}
-      <div className="mb-6">
-        <h2 className="font-semibold">Expense ratio: 0.67%</h2>
-        <p className="text-gray-400 mt-1">Inclusive of GST</p>
-      </div>
-
-      {/* Exit Load */}
-      <div className="mb-6">
-        <h2 className="font-semibold">Exit load</h2>
-        <p className="text-gray-400 mt-1">
-          Exit load of 1%, if redeemed within 365 days.
-        </p>
-      </div>
-
-      {/* Stamp Duty */}
-      <div className="mb-6">
-        <h2 className="font-semibold">Stamp duty</h2>
-        <p className="text-gray-400 mt-1">0.005% (from July 1st, 2020)</p>
-      </div>
-
-      {/* Tax Implication */}
-      <div>
-        <h2 className="font-semibold">Tax implication</h2>
-        <p className="text-gray-400 mt-1 leading-relaxed">
-          Returns are taxed at 20%, if you redeem before one year. After 1 year,
-          you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+
-          in a financial year.
-        </p>
-      </div>
-    </div>
-
       </section>
 
+      {/* Fund Management Section */}
+      <section className="px-6 py-16 max-w-6xl mx-auto relative">
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
+              <Briefcase className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Fund Management</h2>
+          </div>
+          <div className="space-y-4">
+            {managers.map((manager, index) => (
+              <div key={index} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6 flex justify-between items-center hover:bg-white/15 transition-all duration-300">
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{manager.name}</h3>
+                  <p className="text-sm text-gray-300 mt-1">
+                    {manager.startDate} - <span className="text-white">{manager.endDate}</span>
+                  </p>
+                </div>
+                <button className="text-gray-300 text-sm flex items-center gap-2 hover:text-white transition-colors duration-300 px-4 py-2 backdrop-blur-md bg-white/10 border border-white/20 rounded-lg hover:bg-white/20">
+                  View details
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expense Ratio Section */}
+      <section className="px-6 py-16 max-w-6xl mx-auto relative">
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-2xl">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="p-3 rounded-full bg-white/20 backdrop-blur-sm">
+              <PieChart className="w-6 h-6 text-white" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Expense Ratio, Exit Load and Tax</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Expense Ratio */}
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6">
+              <h3 className="font-semibold text-white text-lg mb-2">Expense Ratio: 0.67%</h3>
+              <p className="text-gray-300">Inclusive of GST</p>
+            </div>
+
+            {/* Exit Load */}
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6">
+              <h3 className="font-semibold text-white text-lg mb-2">Exit Load</h3>
+              <p className="text-gray-300">Exit load of 1%, if redeemed within 365 days.</p>
+            </div>
+
+            {/* Stamp Duty */}
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6">
+              <h3 className="font-semibold text-white text-lg mb-2">Stamp Duty</h3>
+              <p className="text-gray-300">0.005% (from July 1st, 2020)</p>
+            </div>
+
+            {/* Tax Implication */}
+            <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-6">
+              <h3 className="font-semibold text-white text-lg mb-2">Tax Implication</h3>
+              <p className="text-gray-300">Returns are taxed at 20%, if you redeem before one year. After 1 year, you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+ in a financial year.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Disclaimer */}
       <footer className="px-6 py-12 max-w-4xl mx-auto text-center relative">
         <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
