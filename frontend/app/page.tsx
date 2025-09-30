@@ -240,6 +240,42 @@ const MotilalFundLanding: React.FC = () => {
         ))}
       </div>
     </div>
+        <div className="min-h-screen bg-black text-white p-6">
+      <h1 className="text-2xl font-semibold mb-6">
+        Expense ratio, exit load and tax
+      </h1>
+
+      {/* Expense Ratio */}
+      <div className="mb-6">
+        <h2 className="font-semibold">Expense ratio: 0.67%</h2>
+        <p className="text-gray-400 mt-1">Inclusive of GST</p>
+      </div>
+
+      {/* Exit Load */}
+      <div className="mb-6">
+        <h2 className="font-semibold">Exit load</h2>
+        <p className="text-gray-400 mt-1">
+          Exit load of 1%, if redeemed within 365 days.
+        </p>
+      </div>
+
+      {/* Stamp Duty */}
+      <div className="mb-6">
+        <h2 className="font-semibold">Stamp duty</h2>
+        <p className="text-gray-400 mt-1">0.005% (from July 1st, 2020)</p>
+      </div>
+
+      {/* Tax Implication */}
+      <div>
+        <h2 className="font-semibold">Tax implication</h2>
+        <p className="text-gray-400 mt-1 leading-relaxed">
+          Returns are taxed at 20%, if you redeem before one year. After 1 year,
+          you are required to pay LTCG tax of 12.5% on returns of Rs 1.25 lakh+
+          in a financial year.
+        </p>
+      </div>
+    </div>
+
       </section>
 
       {/* Disclaimer */}
